@@ -17,7 +17,8 @@ if __name__ == '__main__':
     #默认把重复文件移动到这个文件夹，可以自定义名字
     #Default to move the duplicate file to this folder and can customize the name
     dupDir="Duplications"
-    mkdir(dupDir)
+    if not os.path.exists('Duplications'):
+        mkdir(dupDir)
     mdFile={}
     fileName={}
     for fpath,dirs,fs in walk('.'):
